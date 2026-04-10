@@ -71,3 +71,30 @@ as options to the openflow._01 component:
 
 The full POX documentation is available on GitHub at
 https://noxrepo.github.io/pox-doc/html/
+
+# SDN Path Tracing using POX
+
+## Overview
+This project demonstrates Software Defined Networking (SDN) using Mininet and POX controller.
+
+## Features
+- Learning switch implementation
+- Path tracing of packets
+- Host-to-host communication visualization
+
+## Setup
+- Ubuntu VM
+- Mininet
+- POX Controller
+
+## Run
+
+Controller:
+python3 pox.py path_tracer openflow.of_01 --port=6634
+
+Mininet:
+sudo mn --topo linear,3 --controller=remote,port=6634
+
+## Test
+h1 ping -c 5 h2
+h2 ping -c 3 h1
